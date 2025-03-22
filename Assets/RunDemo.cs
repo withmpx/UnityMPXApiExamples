@@ -69,7 +69,7 @@ public class RunDemo : MonoBehaviour
     void Start()
     {
         // ensure that the user has replaced the default placeholder value with an API key
-        // NOTE: no actual checks
+        // NOTE: no actual checks are done on the API key itself to see if it's valid so MPX_TestConnection() will let you know if it works
         if (MPXSecretToken == null || MPXSecretToken == PLACEHOLDER_TOKEN)
         {
             Debug.LogError("You need to edit the 'MPXSecretToken' with the API key generated from your account on https://developers.masterpiecex.com/ in order to use the MPX API.");
@@ -116,7 +116,6 @@ public class RunDemo : MonoBehaviour
 
         }).Catch(err => Debug.Log(err.Message));
     }
-
 
     /// <summary>
     /// Keep querying the requestId for a status of 'complete' or 'failed'. 
@@ -198,9 +197,8 @@ public class RunDemo : MonoBehaviour
         }).Catch(err => Debug.Log(err.Message));
     }
 
-
     /// <summary>
-    /// Generals a 3D model from just a single text prompt.
+    /// Generates a 3D model from just a single text prompt.
     /// 
     /// See: https://docs.masterpiecex.com/reference/post_functions-general#/ for more details.
     /// </summary>

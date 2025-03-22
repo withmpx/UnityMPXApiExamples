@@ -13,7 +13,7 @@ namespace MPXStructures
         public float progress; // The progress of the request. Only available if status is pending | processing
         public float progressTime_s; // The processing time in seconds. Only available if status is complete
         public string outputUrl; // The URL of the output model. Only available if status is complete
-        public ImageDataOutputs outputs; // dictionary of outputs
+        public GenerationOutputs outputs; // dictionary of outputs
 
         public override string ToString()
         {
@@ -22,7 +22,7 @@ namespace MPXStructures
     }
 
     [Serializable]
-    public class ImageDataOutputs
+    public class GenerationOutputs
     {
         public string fbx;
         public string glb;
